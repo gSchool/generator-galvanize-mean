@@ -24,9 +24,6 @@ var paths = {
     './src/client/public/css/*.css',
   ],
   scripts: [
-    './src/client/public/js/*.js',
-  ],
-  angular: [
     './src/client/*.js',
   ],
   server: [
@@ -106,12 +103,6 @@ gulp.task('minify-js', function() {
     .pipe(gulp.dest('./dist/client/public/js/'));
 });
 
-gulp.task('minify-angular', function() {
-  gulp.src(paths.angular)
-    .pipe(uglify())
-    .pipe(gulp.dest('./dist/client/'));
-});
-
 gulp.task('copy-partials', function () {
   gulp.src('./src/client/partials/*')
     .pipe(gulp.dest('./dist/client/partials'));
@@ -152,7 +143,7 @@ gulp.task('default', ['browser-sync', 'watch']);
 gulp.task('build', function() {
   runSequence(
     ['clean'],
-    ['lint', 'minify-css', 'minify-js', 'minify-angular',
-     'copy-server-files', 'copy-partials', 'copy-index', 'connectDist']
+    ['lint', 'minify-css', 'minify-js', 'copy-server-files',
+     'copy-partials', 'copy-index', 'connectDist']
   );
 });
