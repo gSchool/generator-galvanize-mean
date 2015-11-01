@@ -11,8 +11,8 @@ var GalvanizeExpreessGenerator = yeoman.generators.Base.extend({
   },
 
   createApp: function(){
-    this.directort('./src/client/', './src/client/');
-    this.directort('./src/server/', './src/server/');
+    this.directory('./src/client/', './src/client/');
+    this.directory('./src/server/', './src/server/');
     this.copy('package.json');
     this.copy('_gitignore', '.gitignore');
     this.copy('gulpfile.js', 'gulpfile.js');
