@@ -100,7 +100,7 @@ gulp.task('minify-css', function() {
 gulp.task('minify-js', function() {
   gulp.src(paths.scripts)
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/client/public/js/'));
+    .pipe(gulp.dest('./dist/client/'));
 });
 
 gulp.task('copy-partials', function () {
