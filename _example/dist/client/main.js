@@ -1,0 +1,1 @@
+var myApp=angular.module("myApp",["ngRoute"]);myApp.config(["$routeProvider",function(e){e.when("/",{templateUrl:"partials/home.html"}).otherwise({redirectTo:"/"})}]);
